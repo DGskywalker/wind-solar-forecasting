@@ -53,7 +53,7 @@ market:
   backtest_capital_eur: 10_000_000
 
 mlflow:
-  tracking_uri: "file:./mlruns"
+  tracking_uri: "sqlite:///mlflow.db"
   experiment_name: "european-wind-solar-forecasting"
   autolog: false
 
