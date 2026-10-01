@@ -4,10 +4,14 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from wind_solar_forecast.models.baselines import ClimatologyForecaster, NWPDirectForecaster, PersistenceForecaster
+from wind_solar_forecast.models.baselines import (
+    ClimatologyForecaster,
+    NWPDirectForecaster,
+    PersistenceForecaster,
+)
 from wind_solar_forecast.models.conformal import ConformalQuantileRegressor
 from wind_solar_forecast.models.deep import DeepProbabilisticForecaster
-from wind_solar_forecast.models.ensemble import CRPSOptimalEnsemble, quantile_crps
+from wind_solar_forecast.models.ensemble import CRPSOptimalEnsemble
 from wind_solar_forecast.models.gbdt import LGBMQuantileForecaster, NGBoostForecaster
 from wind_solar_forecast.models.linear import LinearBenchmark
 

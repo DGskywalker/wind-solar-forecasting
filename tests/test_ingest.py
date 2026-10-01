@@ -7,9 +7,7 @@ from wind_solar_forecast.data.capacity import get_installed_capacity
 from wind_solar_forecast.data.geo import compute_latitude_weights, get_zone_geo
 from wind_solar_forecast.data.schemas import (
     ForecastVintage,
-    MarketPriceRecord,
     NWPForecastPoint,
-    PowerGenerationRecord,
     WeatherObservation,
 )
 from wind_solar_forecast.pipeline.ingest import run_ingestion_pipeline

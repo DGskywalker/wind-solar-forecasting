@@ -2,11 +2,9 @@
 
 import numpy as np
 import pandas as pd
-import pytest
 
-from wind_solar_forecast.features.build_features import build_feature_dataset, identify_regime_flags
+from wind_solar_forecast.features.build_features import identify_regime_flags
 from wind_solar_forecast.features.pv_model import compute_pv_capacity_factor
-from wind_solar_forecast.features.temporal import compute_fourier_cyclical_features, compute_strictly_backward_lags
 from wind_solar_forecast.features.turbine_curve import (
     aggregate_zone_wind_cf,
     siemens_sg_80_167_power_curve,

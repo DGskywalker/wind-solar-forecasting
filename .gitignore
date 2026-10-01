@@ -61,3 +61,4 @@ data/feature_store/*
 # OS
 .DS_Store
 Thumbs.db
+mlflow.db*
