@@ -1,0 +1,92 @@
+name: CI & Research Pipeline
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    # Nightly retrain check at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  lint-and-typecheck:
+    name: Lint & Static Type Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v2
+        with:
+          version: "latest"
+
+      - name: Set up Python 3.11
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: |
+          uv venv --python 3.11
+          uv pip install -e ".[dev]"
+
+      - name: Run Ruff Linter
+        run: uv run ruff check src/ tests/
+
+      - name: Run Mypy Strict Type Check
+        run: uv run mypy src/
+
+  test-and-coverage:
+    name: Unit & Leakage Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v2
+        with:
+          version: "latest"
+
+      - name: Set up Python 3.11
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: |
+          uv venv --python 3.11
+          uv pip install -e ".[dev]"
+
+      - name: Execute Pytest Suite with Coverage
+        run: |
+          uv run pytest tests/ --cov=src/wind_solar_forecast --cov-report=xml --cov-report=term-missing
+
+      - name: Upload Coverage Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+
+  nightly-retrain:
+    name: Pipeline Verification & Model Retrain
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v2
+        with:
+          version: "latest"
+
+      - name: Set up Python 3.11
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: |
+          uv venv --python 3.11
+          uv pip install -e ".[dev]"
+
+      - name: Execute End-to-End Pipeline
+        run: |
+          uv run python -m wind_solar_forecast.pipeline.ingest --sample
+          uv run python -m wind_solar_forecast.pipeline.train --zone DE_LU --horizon D-1
+          uv run python -m wind_solar_forecast.pipeline.evaluate

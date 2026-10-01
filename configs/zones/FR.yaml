@@ -1,0 +1,28 @@
+# Zone configuration: France (FR)
+name: "FR"
+country: "France"
+currency: "EUR"
+bidding_zone: "FR"
+entsoe_eic: "10YFR-RTE------C"
+
+geo:
+  lat_min: 42.33
+  lat_max: 51.09
+  lon_min: -4.79
+  lon_max: 8.23
+  centroid: [46.6034, 1.8883]
+  pv_tilt_deg: 32.0
+  pv_azimuth_deg: 180.0
+
+capacity:
+  wind_onshore_gw: 21.0
+  wind_offshore_gw: 1.5
+  solar_pv_gw: 18.0
+
+turbines:
+  onshore_model: "Vestas_V112_3450"
+  onshore_hub_height_m: 110
+  onshore_rated_power_kw: 3450
+  offshore_model: "Siemens_SG_80_167_DD"
+  offshore_hub_height_m: 120
+  offshore_rated_power_kw: 8000

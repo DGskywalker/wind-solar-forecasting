@@ -1,0 +1,28 @@
+# Zone configuration: Netherlands (NL)
+name: "NL"
+country: "Netherlands"
+currency: "EUR"
+bidding_zone: "NL"
+entsoe_eic: "10YNL----------L"
+
+geo:
+  lat_min: 50.75
+  lat_max: 53.55
+  lon_min: 3.36
+  lon_max: 7.22
+  centroid: [52.1326, 5.2913]
+  pv_tilt_deg: 35.0
+  pv_azimuth_deg: 180.0
+
+capacity:
+  wind_onshore_gw: 6.8
+  wind_offshore_gw: 4.8
+  solar_pv_gw: 22.5
+
+turbines:
+  onshore_model: "Vestas_V112_3450"
+  onshore_hub_height_m: 110
+  onshore_rated_power_kw: 3450
+  offshore_model: "Siemens_SG_80_167_DD"
+  offshore_hub_height_m: 130
+  offshore_rated_power_kw: 8000

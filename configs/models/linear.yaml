@@ -1,0 +1,11 @@
+# Linear Models Configuration
+name: "linear"
+
+ridge:
+  alpha: 1.0
+  fit_intercept: true
+
+quantile:
+  quantiles: [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
+  alpha: 0.05
+  solver: "highs"

@@ -1,0 +1,28 @@
+# Zone configuration: Great Britain (GB)
+name: "GB"
+country: "United Kingdom"
+currency: "GBP"
+bidding_zone: "GB"
+entsoe_eic: "10YGB----------A"
+
+geo:
+  lat_min: 49.9
+  lat_max: 58.7
+  lon_min: -7.5
+  lon_max: 1.8
+  centroid: [55.3781, -3.4360]
+  pv_tilt_deg: 38.0
+  pv_azimuth_deg: 180.0
+
+capacity:
+  wind_onshore_gw: 15.0
+  wind_offshore_gw: 14.5
+  solar_pv_gw: 15.5
+
+turbines:
+  onshore_model: "Vestas_V112_3450"
+  onshore_hub_height_m: 100
+  onshore_rated_power_kw: 3450
+  offshore_model: "Siemens_SG_80_167_DD"
+  offshore_hub_height_m: 130
+  offshore_rated_power_kw: 8000

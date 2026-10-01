@@ -1,0 +1,13 @@
+# Default Experiment Settings
+name: "default"
+description: "Standard walk-forward cross-validation benchmark on DE_LU"
+zone: "DE_LU"
+horizon: "D-1"
+vintages: ["D-1_12:00"]
+walk_forward:
+  n_splits: 4
+  train_window_days: 180
+  test_window_days: 30
+  embargo_days: 1
+tune_hyperparams: false
+n_optuna_trials: 20

@@ -1,0 +1,28 @@
+# Zone configuration: Spain (ES)
+name: "ES"
+country: "Spain"
+currency: "EUR"
+bidding_zone: "ES"
+entsoe_eic: "10YES-REE------0"
+
+geo:
+  lat_min: 36.00
+  lat_max: 43.79
+  lon_min: -9.30
+  lon_max: 3.32
+  centroid: [40.4637, -3.7492]
+  pv_tilt_deg: 30.0
+  pv_azimuth_deg: 180.0
+
+capacity:
+  wind_onshore_gw: 30.5
+  wind_offshore_gw: 0.05
+  solar_pv_gw: 25.0
+
+turbines:
+  onshore_model: "Vestas_V112_3450"
+  onshore_hub_height_m: 100
+  onshore_rated_power_kw: 3450
+  offshore_model: "Siemens_SG_80_167_DD"
+  offshore_hub_height_m: 120
+  offshore_rated_power_kw: 8000

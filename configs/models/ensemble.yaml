@@ -1,0 +1,15 @@
+# Stacking and CRPS-Weighted Ensemble Configuration
+name: "ensemble"
+
+method: "crps_optimal_blend" # "crps_optimal_blend" or "stacking_meta_learner"
+models:
+  - "linear"
+  - "gbdt"
+  - "ngboost"
+  - "tft"
+
+optimization:
+  loss: "crps"
+  method: "SLSQP"
+  bounds: [0.0, 1.0]
+  sum_to_one: true

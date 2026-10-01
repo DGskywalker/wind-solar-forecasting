@@ -1,0 +1,28 @@
+# Zone configuration: Poland (PL)
+name: "PL"
+country: "Poland"
+currency: "PLN"
+bidding_zone: "PL"
+entsoe_eic: "10YPL-AREA-----S"
+
+geo:
+  lat_min: 49.00
+  lat_max: 54.83
+  lon_min: 14.12
+  lon_max: 24.15
+  centroid: [51.9194, 19.1451]
+  pv_tilt_deg: 35.0
+  pv_azimuth_deg: 180.0
+
+capacity:
+  wind_onshore_gw: 9.8
+  wind_offshore_gw: 0.0
+  solar_pv_gw: 17.5
+
+turbines:
+  onshore_model: "Vestas_V112_3450"
+  onshore_hub_height_m: 110
+  onshore_rated_power_kw: 3450
+  offshore_model: "Siemens_SG_80_167_DD"
+  offshore_hub_height_m: 120
+  offshore_rated_power_kw: 8000

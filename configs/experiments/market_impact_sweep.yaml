@@ -1,0 +1,16 @@
+# Market Price Impact Econometric Sweep
+name: "market_impact_sweep"
+description: "Econometric panel estimation (OLS-FE, 2SLS-IV, DML, Spline Merit-Order) of forecast error on day-ahead and intraday power prices"
+zones: ["DE_LU", "FR", "ES", "NL"]
+horizons: ["D-1", "ID_4h"]
+estimation_specs:
+  - "ols_twoway_fe"
+  - "iv_2sls"
+  - "double_ml"
+  - "quantile_reg"
+  - "merit_order_spline"
+backtest:
+  capital_eur: 10_000_000
+  transaction_cost_eur_mwh: 0.50
+  intraday_half_spread_eur_mwh: 1.20
+  confidence_cutoff: 0.70

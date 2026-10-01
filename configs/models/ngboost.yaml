@@ -1,0 +1,12 @@
+# NGBoost Probabilistic Configuration
+name: "ngboost"
+
+params:
+  n_estimators: 150
+  learning_rate: 0.03
+  natural_gradient: true
+  minibatch_frac: 0.8
+  verbose: false
+  random_state: 42
+
+quantiles: [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]

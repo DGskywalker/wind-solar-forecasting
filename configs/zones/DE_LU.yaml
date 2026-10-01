@@ -1,0 +1,28 @@
+# Zone configuration: Germany-Luxembourg (DE_LU)
+name: "DE_LU"
+country: "Germany"
+currency: "EUR"
+bidding_zone: "DE_LU"
+entsoe_eic: "10Y1001A1001A82H"
+
+geo:
+  lat_min: 47.27
+  lat_max: 55.06
+  lon_min: 5.87
+  lon_max: 15.04
+  centroid: [51.1657, 10.4515]
+  pv_tilt_deg: 35.0
+  pv_azimuth_deg: 180.0
+
+capacity:
+  wind_onshore_gw: 58.5
+  wind_offshore_gw: 8.5
+  solar_pv_gw: 82.0
+
+turbines:
+  onshore_model: "Vestas_V112_3450"
+  onshore_hub_height_m: 120
+  onshore_rated_power_kw: 3450
+  offshore_model: "Siemens_SG_80_167_DD"
+  offshore_hub_height_m: 130
+  offshore_rated_power_kw: 8000

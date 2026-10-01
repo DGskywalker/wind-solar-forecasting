@@ -1,0 +1,28 @@
+# Zone configuration: Denmark West (DK_1)
+name: "DK_1"
+country: "Denmark"
+currency: "EUR"
+bidding_zone: "DK_1"
+entsoe_eic: "10YDK-1--------W"
+
+geo:
+  lat_min: 54.55
+  lat_max: 57.75
+  lon_min: 8.08
+  lon_max: 10.62
+  centroid: [56.2639, 9.5018]
+  pv_tilt_deg: 40.0
+  pv_azimuth_deg: 180.0
+
+capacity:
+  wind_onshore_gw: 4.8
+  wind_offshore_gw: 2.3
+  solar_pv_gw: 3.5
+
+turbines:
+  onshore_model: "Vestas_V112_3450"
+  onshore_hub_height_m: 100
+  onshore_rated_power_kw: 3450
+  offshore_model: "Siemens_SG_80_167_DD"
+  offshore_hub_height_m: 120
+  offshore_rated_power_kw: 8000

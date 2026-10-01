@@ -1,0 +1,12 @@
+# Multi-Zone Model Ladder Sweep
+name: "benchmark_sweep"
+description: "Cross-zone benchmark across DE_LU, FR, ES, GB, NL, DK_1, PL"
+zones: ["DE_LU", "FR", "ES", "GB", "NL", "DK_1", "PL"]
+horizons: ["D-2", "D-1", "ID_4h"]
+models: ["persistence", "climatology", "nwp_direct", "ridge", "quantile_reg", "gbdt", "ngboost", "tft", "ensemble"]
+walk_forward:
+  n_splits: 4
+  train_window_days: 180
+  test_window_days: 30
+  embargo_days: 1
+tune_hyperparams: false

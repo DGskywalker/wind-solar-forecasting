@@ -1,0 +1,8 @@
+# Conformal Prediction Wrapper Configuration
+name: "conformal"
+
+method: "cqr" # Conformalized Quantile Regression
+coverage_levels: [0.80, 0.90, 0.95]
+asymmetric: true
+rolling_window_days: 30
+base_model: "gbdt"

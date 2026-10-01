@@ -1,0 +1,18 @@
+# Temporal Fusion Transformer / PyTorch Deep Probabilistic Configuration
+name: "tft"
+
+architecture:
+  hidden_size: 64
+  lstm_layers: 2
+  attention_head_size: 4
+  dropout: 0.15
+  quantiles: [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
+
+training:
+  max_epochs: 30
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  gradient_clip_val: 0.5
+  patience: 7
+  seed_runs: 5

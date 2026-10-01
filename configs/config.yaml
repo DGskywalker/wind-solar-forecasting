@@ -1,0 +1,65 @@
+# Hydra Root Configuration
+# Weather-Driven Wind & Solar Generation Forecasting for European Power Markets
+
+defaults:
+  - _self_
+  - zones: DE_LU
+  - models: gbdt
+  - experiments: default
+
+project:
+  name: "european-wind-solar-forecasting"
+  version: "0.1.0"
+  seed: 42
+  device: "cpu" # "cpu" or "cuda" / "mps"
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  feature_store_dir: "data/feature_store"
+  model_dir: "data/models"
+  duckdb_file: "data/processed/power_market.duckdb"
+  figures_dir: "reports/figures"
+  report_file: "reports/research_report.md"
+
+data:
+  start_date: "2022-01-01"
+  end_date: "2023-12-31"
+  sample_start_date: "2023-01-01"
+  sample_end_date: "2023-01-08"
+  vintages: ["D-2_12:00", "D-1_00:00", "D-1_12:00", "ID_4h"]
+  target_technologies: ["wind_onshore", "wind_offshore", "solar_pv"]
+  resolution: "1h"
+  use_synthetic_fallback: true
+
+features:
+  lags_hours: [1, 2, 3, 24, 48, 168]
+  ramp_windows_hours: [1, 3, 6]
+  fourier_harmonics:
+    diurnal: 3
+    annual: 2
+  regimes:
+    dunkelflaute_wind_cf_thresh: 0.10
+    dunkelflaute_solar_cf_thresh: 0.05
+    dunkelflaute_duration_min_hours: 6
+    storm_wind_speed_pct: 0.90
+    heat_dome_temp_pct: 0.95
+
+market:
+  zones: ["DE_LU", "FR", "ES", "GB", "NL", "BE", "DK_1", "DK_2", "PL", "IT_NORD", "SE_3", "AT", "PT", "IE_SEM"]
+  transaction_cost_eur_mwh: 0.50
+  intraday_half_spread_eur_mwh: 1.20
+  risk_free_rate: 0.03
+  backtest_capital_eur: 10_000_000
+
+mlflow:
+  tracking_uri: "file:./mlruns"
+  experiment_name: "european-wind-solar-forecasting"
+  autolog: false
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}

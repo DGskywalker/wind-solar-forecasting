@@ -1,0 +1,12 @@
+# Baseline models configuration
+name: "baselines"
+
+persistence:
+  lag_hours: 24 # Day-ahead default persistence lag
+
+climatology:
+  window_days: 14
+  quantile_levels: [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
+
+nwp_direct:
+  calibrate_bias: false
