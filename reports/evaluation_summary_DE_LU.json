@@ -1,0 +1,91 @@
+{
+  "zone": "DE_LU",
+  "vintage": "D-1_12:00",
+  "models": {
+    "linear": {
+      "mae": 0.029,
+      "rmse": 0.0373,
+      "crps": 0.0174,
+      "crps_95_ci": [
+        0.139,
+        0.3599
+      ],
+      "winkler_score_90": 0.1835,
+      "ece": 0.0535,
+      "dm_stat_vs_ref": 0.0,
+      "dm_p_val": 1.0,
+      "is_significantly_better": false
+    },
+    "gbdt": {
+      "mae": 0.0626,
+      "rmse": 0.0926,
+      "crps": 0.0433,
+      "crps_95_ci": [
+        0.1046,
+        0.2264
+      ],
+      "winkler_score_90": 0.5322,
+      "ece": 0.0362,
+      "dm_stat_vs_ref": 1.968,
+      "dm_p_val": 0.0557,
+      "is_significantly_better": false
+    },
+    "ngboost": {
+      "mae": 0.077,
+      "rmse": 0.0991,
+      "crps": 0.0481,
+      "crps_95_ci": [
+        0.1056,
+        0.2444
+      ],
+      "winkler_score_90": 0.4853,
+      "ece": 0.096,
+      "dm_stat_vs_ref": 5.179,
+      "dm_p_val": 0.0,
+      "is_significantly_better": false
+    },
+    "deep": {
+      "mae": 0.1462,
+      "rmse": 0.171,
+      "crps": 0.091,
+      "crps_95_ci": [
+        0.1031,
+        0.1385
+      ],
+      "winkler_score_90": 0.8214,
+      "ece": 0.0944,
+      "dm_stat_vs_ref": 1680.255,
+      "dm_p_val": 0.0,
+      "is_significantly_better": false
+    },
+    "ensemble": {
+      "mae": 0.0292,
+      "rmse": 0.0374,
+      "crps": 0.0168,
+      "crps_95_ci": [
+        0.1374,
+        0.357
+      ],
+      "winkler_score_90": 0.1657,
+      "ece": 0.0967,
+      "dm_stat_vs_ref": 0.431,
+      "dm_p_val": 0.6688,
+      "is_significantly_better": false
+    }
+  },
+  "error_decomposition": {
+    "model": "ensemble",
+    "total_mse": 0.001398,
+    "unconditional_bias": -0.00037,
+    "fraction_bias": 0.0001,
+    "fraction_variance": 0.9999,
+    "portfolio_smoothing_ratio": 0.6061
+  },
+  "ramp_analysis": {
+    "total_up_ramps": 9,
+    "total_down_ramps": 10,
+    "up_ramp_hit_rate": 1.0,
+    "down_ramp_hit_rate": 1.0,
+    "ramp_rmse": 0.0454579369142703
+  }
+}
