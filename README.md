@@ -98,6 +98,14 @@ flowchart LR
 - Implements continuous intraday trading simulation with real-world exchange execution fees (0.50 EUR/MWh) and bid-ask half-spreads (1.20 EUR/MWh).
 - Implements confidence-gated order dispatch, comparing naive directional strategies against selective signal routing.
 
+### F. LangChain Agentic Module: Autonomous Reasoning & Quantitative Tool Execution
+
+<div align="center">
+  <img src="output/langchain_agent_card.png" alt="LangChain Agentic Architecture" width="95%"/>
+</div>
+
+The platform integrates a dedicated LangChain-powered agentic decision module that operationalizes the transition from numerical weather prediction to real-time power market strategy via structured ReAct (Reasoning and Acting) execution loops. Operating over high-dimensional atmospheric and market states, the agent orchestrates multi-step quantitative workflows by dynamically dispatching typed tools: it queries the multi-horizon probabilistic ladder for conformal prediction intervals (P10 to P90 capacity factor distributions), propagates generation surprise distributions through the non-linear merit-order cubic spline, invokes two-stage least squares (2SLS) and double machine learning (DML) models to isolate exogenous price impact, and passes the resulting price displacement estimates through a friction-auditing execution tool. By explicitly contrasting expected price deltas against the 1.70 EUR/MWh round-trip hurdle (exchange clearing fees and bid-ask half-spreads), the agent eliminates low-conviction portfolio churning and executes confidence-gated rebalancing orders alongside a fully auditable reasoning trace for risk managers and power trading desks.
+
 ---
 
 ## 3. Empirical Results & Output Gallery
