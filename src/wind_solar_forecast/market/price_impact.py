@@ -2,10 +2,11 @@
 
 from dataclasses import dataclass
 from typing import Any
+
 import numpy as np
 import pandas as pd
-from scipy import stats
 import statsmodels.api as sm
+from scipy import stats
 from statsmodels.regression.quantile_regression import QuantReg
 
 
@@ -64,7 +65,6 @@ def estimate_ols_fixed_effects(
     data["hour"] = pd.to_datetime(data["valid_time"], utc=True).dt.hour
     data["month"] = pd.to_datetime(data["valid_time"], utc=True).dt.month
 
-    fe_cols = []
     # Drop first dummy to avoid dummy variable trap
     hour_dummies = pd.get_dummies(data["hour"], prefix="fe_h", drop_first=True, dtype=float)
     month_dummies = pd.get_dummies(data["month"], prefix="fe_m", drop_first=True, dtype=float)
@@ -195,6 +195,7 @@ def run_all_price_impact_regressions(zone: str = "DE_LU", vintage: str = "D-1_12
     """Loads feature store data and executes OLS-FE, 2SLS-IV, Quantile, and DML models."""
     import json
     from pathlib import Path
+
     from wind_solar_forecast.features.build_features import build_feature_dataset
 
     df, _ = build_feature_dataset(zone=zone, vintage=vintage, start_date="2023-01-01", end_date="2023-01-08")

@@ -28,6 +28,7 @@ def setup_logger(log_level: str = "INFO", json_format: bool = False) -> structlo
         structlog.processors.format_exc_info,
     ]
 
+    formatter_processor: Any
     if json_format:
         formatter_processor = structlog.processors.JSONRenderer()
     else:

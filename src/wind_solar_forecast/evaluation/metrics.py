@@ -1,7 +1,6 @@
 """Evaluation metrics for deterministic, quantile, and distributional probabilistic forecasts."""
 
 import numpy as np
-import pandas as pd
 
 
 def compute_mae(y_true: np.ndarray, y_pred: np.ndarray) -> float:

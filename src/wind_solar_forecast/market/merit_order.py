@@ -1,8 +1,8 @@
 """Non-linear merit-order stack spline modeling and forecast error propagation (Sensfuß et al. 2008)."""
 
 from dataclasses import dataclass
+
 import numpy as np
-import pandas as pd
 from scipy.interpolate import UnivariateSpline
 
 

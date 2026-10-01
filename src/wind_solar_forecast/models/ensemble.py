@@ -1,6 +1,7 @@
 """Ensemble methods: CRPS-optimal weighted blend and multi-model stacking."""
 
 from typing import Any
+
 import numpy as np
 import pandas as pd
 from scipy.optimize import minimize

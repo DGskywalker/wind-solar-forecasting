@@ -1,6 +1,7 @@
 """Geographical definitions, bounding boxes, bidding zone definitions, and spatial aggregation."""
 
 from dataclasses import dataclass
+
 import numpy as np
 
 

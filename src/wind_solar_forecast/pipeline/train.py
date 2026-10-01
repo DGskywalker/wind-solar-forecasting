@@ -3,19 +3,23 @@
 import argparse
 from pathlib import Path
 from typing import Any
+
 import joblib
 import mlflow
 import numpy as np
 import pandas as pd
 
 from wind_solar_forecast.features.build_features import build_feature_dataset
-from wind_solar_forecast.models.baselines import ClimatologyForecaster, NWPDirectForecaster, PersistenceForecaster
+from wind_solar_forecast.models.baselines import (
+    ClimatologyForecaster,
+    NWPDirectForecaster,
+    PersistenceForecaster,
+)
 from wind_solar_forecast.models.conformal import ConformalQuantileRegressor
 from wind_solar_forecast.models.deep import DeepProbabilisticForecaster
 from wind_solar_forecast.models.ensemble import CRPSOptimalEnsemble, quantile_crps
 from wind_solar_forecast.models.gbdt import LGBMQuantileForecaster, NGBoostForecaster
 from wind_solar_forecast.models.linear import LinearBenchmark
-from wind_solar_forecast.utils.io import load_parquet
 from wind_solar_forecast.utils.logging import logger
 
 

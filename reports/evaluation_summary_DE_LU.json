@@ -31,16 +31,16 @@
       "is_significantly_better": false
     },
     "ngboost": {
-      "mae": 0.077,
-      "rmse": 0.0991,
-      "crps": 0.0481,
+      "mae": 0.0774,
+      "rmse": 0.1004,
+      "crps": 0.0485,
       "crps_95_ci": [
-        0.1056,
-        0.2444
+        0.1062,
+        0.2439
       ],
-      "winkler_score_90": 0.4853,
+      "winkler_score_90": 0.4936,
       "ece": 0.096,
-      "dm_stat_vs_ref": 5.179,
+      "dm_stat_vs_ref": 5.599,
       "dm_p_val": 0.0,
       "is_significantly_better": false
     },
@@ -61,13 +61,13 @@
     "ensemble": {
       "mae": 0.0292,
       "rmse": 0.0374,
-      "crps": 0.0168,
+      "crps": 0.0167,
       "crps_95_ci": [
-        0.1374,
-        0.357
+        0.1372,
+        0.3566
       ],
-      "winkler_score_90": 0.1657,
-      "ece": 0.0967,
+      "winkler_score_90": 0.1645,
+      "ece": 0.0468,
       "dm_stat_vs_ref": 0.431,
       "dm_p_val": 0.6688,
       "is_significantly_better": false
@@ -76,7 +76,7 @@
   "error_decomposition": {
     "model": "ensemble",
     "total_mse": 0.001398,
-    "unconditional_bias": -0.00037,
+    "unconditional_bias": -0.000397,
     "fraction_bias": 0.0001,
     "fraction_variance": 0.9999,
     "portfolio_smoothing_ratio": 0.6061
@@ -86,6 +86,6 @@
     "total_down_ramps": 10,
     "up_ramp_hit_rate": 1.0,
     "down_ramp_hit_rate": 1.0,
-    "ramp_rmse": 0.0454579369142703
+    "ramp_rmse": 0.04542292956080441
   }
 }

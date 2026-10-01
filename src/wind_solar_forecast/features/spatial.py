@@ -1,7 +1,6 @@
 """Spatial feature engineering: upstream weather advection, spatial gradients, and regional upscaling."""
 
 import numpy as np
-import pandas as pd
 
 from wind_solar_forecast.data.geo import get_zone_geo
 

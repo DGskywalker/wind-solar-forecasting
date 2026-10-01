@@ -3,10 +3,9 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
 import numpy as np
 import pandas as pd
-
-from wind_solar_forecast.utils.logging import logger
 
 
 @dataclass(frozen=True)
@@ -126,6 +125,7 @@ def run_power_market_backtest(
 def run_backtest_pipeline(zone: str = "DE_LU", vintage: str = "D-1_12:00") -> dict[str, Any]:
     """Runs backtest on feature store dataset with trained model predictions."""
     import json
+
     from wind_solar_forecast.features.build_features import build_feature_dataset
 
     df, _ = build_feature_dataset(zone=zone, vintage=vintage, start_date="2023-01-01", end_date="2023-01-08")

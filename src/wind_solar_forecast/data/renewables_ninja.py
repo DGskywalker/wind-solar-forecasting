@@ -1,14 +1,14 @@
 """Renewables.ninja client and sanity cross-check benchmarking utility (Pfenninger & Staffell 2016)."""
 
 import os
-from pathlib import Path
+from typing import Any
+
 import numpy as np
 import pandas as pd
 import requests
 
 from wind_solar_forecast.data.geo import get_zone_geo
 from wind_solar_forecast.utils.logging import logger
-from wind_solar_forecast.utils.timeutils import to_utc_datetime
 
 
 class RenewablesNinjaClient:
@@ -39,7 +39,7 @@ class RenewablesNinjaClient:
         if self.token:
             try:
                 headers = {"Authorization": f"Token {self.token}"}
-                params = {
+                params: dict[str, Any] = {
                     "lat": geo.centroid_lat,
                     "lon": geo.centroid_lon,
                     "date_from": f"{year}-01-01",

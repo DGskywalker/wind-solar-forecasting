@@ -1,6 +1,8 @@
 """Statistical significance testing: Diebold-Mariano test (with HLN correction) and Stationary Block Bootstrap."""
 
+from collections.abc import Callable
 from dataclasses import dataclass
+
 import numpy as np
 from scipy import stats
 
@@ -75,7 +77,7 @@ def diebold_mariano_test(
 
 def stationary_block_bootstrap(
     data: np.ndarray,
-    stat_func: callable,
+    stat_func: Callable[[np.ndarray], float],
     n_bootstraps: int = 1000,
     mean_block_length: float = 24.0,
     random_state: int = 42

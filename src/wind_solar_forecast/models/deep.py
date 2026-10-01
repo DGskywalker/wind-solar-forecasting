@@ -1,6 +1,5 @@
 """PyTorch Deep Temporal Fusion architecture with multi-quantile loss and seed averaging."""
 
-from typing import Any
 import numpy as np
 import pandas as pd
 import torch
@@ -148,6 +147,7 @@ class DeepProbabilisticForecaster:
     def predict_quantiles(self, X: pd.DataFrame) -> np.ndarray:
         """Averages predicted quantiles across all seeds and enforces monotonicity."""
         X_arr = np.asarray(X, dtype=np.float32)
+        assert self.feature_means is not None and self.feature_stds is not None
         X_norm = (X_arr - self.feature_means) / self.feature_stds
 
         with torch.no_grad():

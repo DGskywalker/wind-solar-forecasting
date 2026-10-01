@@ -1,7 +1,7 @@
 """I/O utilities for Parquet, Zarr, and DuckDB storage and analytics."""
 
 from pathlib import Path
-from typing import Any
+
 import duckdb
 import pandas as pd
 import pyarrow as pa

@@ -3,7 +3,7 @@
 import numpy as np
 import pandas as pd
 
-from wind_solar_forecast.utils.timeutils import is_dst_transition, to_market_tz
+from wind_solar_forecast.utils.timeutils import is_dst_transition
 
 
 def get_fixed_holidays(year: int) -> set[tuple[int, int]]:

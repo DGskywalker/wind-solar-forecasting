@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 from typing import Any
+
 import numpy as np
 import pandas as pd
 import requests
@@ -99,7 +100,7 @@ class OpenMeteoIngestor:
             logger.warning("Open-Meteo API query encountered issue, using realistic NWP error simulation", error=str(e))
 
         if not use_fallback:
-            raise RuntimeError(f"Failed to fetch Open-Meteo data and fallback is disabled.")
+            raise RuntimeError("Failed to fetch Open-Meteo data and fallback is disabled.")
 
         df = self._simulate_nwp_from_actuals(zone, start_ts, end_ts, vintage, weather_actuals_df)
         save_parquet(df, out_file)

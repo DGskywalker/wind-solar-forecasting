@@ -1,6 +1,7 @@
 """Time utilities for UTC-to-local market conversion, DST transitions, and forecast vintage tracking."""
 
-from datetime import datetime, timezone
+from datetime import datetime
+
 import pandas as pd
 
 

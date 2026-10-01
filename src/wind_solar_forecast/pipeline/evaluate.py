@@ -4,21 +4,25 @@ import argparse
 import json
 from pathlib import Path
 from typing import Any
+
 import numpy as np
-import pandas as pd
 
 from wind_solar_forecast.evaluation.error_decomposition import decompose_forecast_error
 from wind_solar_forecast.evaluation.metrics import (
     compute_calibration_ece,
     compute_crps,
     compute_mae,
-    compute_pinball_loss,
     compute_rmse,
     compute_winkler_score,
 )
-from wind_solar_forecast.evaluation.regime_analysis import analyze_wind_ramps, detect_dunkelflaute_events
-from wind_solar_forecast.evaluation.significance import diebold_mariano_test, stationary_block_bootstrap
-from wind_solar_forecast.models.calibration import compute_pit_values, compute_reliability_table
+from wind_solar_forecast.evaluation.regime_analysis import (
+    analyze_wind_ramps,
+)
+from wind_solar_forecast.evaluation.significance import (
+    diebold_mariano_test,
+    stationary_block_bootstrap,
+)
+from wind_solar_forecast.models.calibration import compute_reliability_table
 from wind_solar_forecast.pipeline.train import run_training_pipeline
 from wind_solar_forecast.utils.logging import logger
 

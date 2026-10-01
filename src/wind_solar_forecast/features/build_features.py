@@ -2,15 +2,13 @@
 
 import json
 from pathlib import Path
-from typing import Any
+
 import numpy as np
 import pandas as pd
 
 from wind_solar_forecast.data.capacity import get_installed_capacity
-from wind_solar_forecast.data.geo import get_zone_geo
 from wind_solar_forecast.data.schemas import FeatureManifestEntry
 from wind_solar_forecast.features.pv_model import compute_pv_capacity_factor
-from wind_solar_forecast.features.spatial import compute_spatial_gradient, compute_upstream_advection_lag
 from wind_solar_forecast.features.temporal import (
     compute_fourier_cyclical_features,
     compute_holiday_and_dst_flags,
@@ -19,7 +17,7 @@ from wind_solar_forecast.features.temporal import (
 )
 from wind_solar_forecast.features.turbine_curve import aggregate_zone_wind_cf
 from wind_solar_forecast.features.weather_features import build_weather_derived_features
-from wind_solar_forecast.utils.io import load_parquet, save_parquet
+from wind_solar_forecast.utils.io import save_parquet
 from wind_solar_forecast.utils.logging import logger
 from wind_solar_forecast.utils.timeutils import to_utc_datetime
 

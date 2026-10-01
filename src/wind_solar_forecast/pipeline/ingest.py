@@ -2,12 +2,13 @@
 
 import argparse
 from pathlib import Path
+
 import pandas as pd
 
 from wind_solar_forecast.data.entsoe_ingest import ENTSOEIngestor
 from wind_solar_forecast.data.era5_ingest import ERA5Ingestor
 from wind_solar_forecast.data.openmeteo_ingest import OpenMeteoIngestor
-from wind_solar_forecast.utils.io import get_duckdb_connection, save_parquet
+from wind_solar_forecast.utils.io import get_duckdb_connection
 from wind_solar_forecast.utils.logging import logger
 
 

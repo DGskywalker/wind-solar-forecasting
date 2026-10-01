@@ -2,11 +2,11 @@
 
 import os
 from pathlib import Path
-from typing import Any
+
 import numpy as np
 import pandas as pd
 
-from wind_solar_forecast.data.geo import compute_latitude_weights, get_zone_geo
+from wind_solar_forecast.data.geo import get_zone_geo
 from wind_solar_forecast.utils.io import save_parquet
 from wind_solar_forecast.utils.logging import logger
 from wind_solar_forecast.utils.timeutils import to_utc_datetime

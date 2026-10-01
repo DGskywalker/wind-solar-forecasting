@@ -1,6 +1,7 @@
 """Double Machine Learning (DML) for causal price impact estimation (Chernozhukov et al. 2018)."""
 
 from dataclasses import dataclass
+
 import lightgbm as lgb
 import numpy as np
 import pandas as pd
@@ -90,8 +91,8 @@ def estimate_double_machine_learning(
         theta = float(np.sum(d_res * y_res) / denom)
         # Asymptotic variance of Neyman-orthogonal score
         residuals = y_res - theta * d_res
-        score_var = np.mean((d_res * residuals) ** 2)
-        var_theta = score_var / ((np.mean(d_res ** 2)) ** 2 * n)
+        score_var = float(np.mean((d_res * residuals) ** 2))
+        var_theta = float(score_var / (((float(np.mean(d_res ** 2))) ** 2) * n))
         se = float(np.sqrt(max(var_theta, 1e-9)))
 
     t_stat = theta / (se + 1e-9)

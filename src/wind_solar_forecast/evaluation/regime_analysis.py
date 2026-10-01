@@ -1,6 +1,7 @@
 """Regime-specific analysis: Dunkelflaute duration, wind ramp rates, heat domes, and negative prices."""
 
 from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
 

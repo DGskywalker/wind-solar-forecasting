@@ -1,6 +1,7 @@
 """Forecast error decomposition: Bias, Variance, Regime-specific error, and Spatial Portfolio smoothing."""
 
 from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
 

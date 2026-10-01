@@ -1,11 +1,12 @@
 """LightGBM Quantile and Point Regressors, plus NGBoost Natural Gradient Boosting."""
 
 from typing import Any
+
 import lightgbm as lgb
-from ngboost import NGBRegressor
-from ngboost.distns import Normal
 import numpy as np
 import pandas as pd
+from ngboost import NGBRegressor
+from ngboost.distns import Normal
 
 
 class LGBMQuantileForecaster:

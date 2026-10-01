@@ -2,7 +2,6 @@
 
 import pandas as pd
 
-
 # Historical and operational nameplate installed capacity benchmarks (in GW)
 # Sources: ENTSO-E SO&AF, IRENA Renewable Capacity Statistics, Agora Energiewende
 CAPACITY_BENCHMARKS: dict[str, dict[int, dict[str, float]]] = {
