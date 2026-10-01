@@ -2,26 +2,26 @@
 
 <div align="center">
 
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![LightGBM](https://img.shields.io/badge/LightGBM-02569B.svg?style=for-the-badge&logo=flutter&logoColor=white)](https://lightgbm.readthedocs.io/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![Ruff](https://img.shields.io/badge/Code%20Style-Ruff-000000.svg?style=for-the-badge&logo=ruff&logoColor=white)](https://github.com/astral-sh/ruff)
-[![Type Checked: Mypy](https://img.shields.io/badge/Type%20Checked-Mypy-blue.svg?style=for-the-badge)](https://mypy.readthedocs.io/)
-[![Tests: 27 Passed](https://img.shields.io/badge/Tests-27%20Passed-brightgreen.svg?style=for-the-badge)](https://pytest.org)
-[![Coverage: 85%](https://img.shields.io/badge/Coverage-85%25-success.svg?style=for-the-badge)](https://pytest.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-3776AB.svg?style=flat-square)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C.svg?style=flat-square)](https://pytorch.org/)
+[![LightGBM](https://img.shields.io/badge/LightGBM-4.0+-02569B.svg?style=flat-square)](https://lightgbm.readthedocs.io/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg?style=flat-square)](https://fastapi.tiangolo.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-FF4B4B.svg?style=flat-square)](https://streamlit.io/)
+[![Ruff](https://img.shields.io/badge/Code%20Style-Ruff-000000.svg?style=flat-square)](https://github.com/astral-sh/ruff)
+[![Type Checked: Mypy](https://img.shields.io/badge/Type%20Checked-Mypy-blue.svg?style=flat-square)](https://mypy.readthedocs.io/)
+[![Tests: 27 Passed](https://img.shields.io/badge/Tests-27%20Passed-brightgreen.svg?style=flat-square)](https://pytest.org)
+[![Coverage: 85%](https://img.shields.io/badge/Coverage-85%25-success.svg?style=flat-square)](https://pytest.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 **An institutional-grade, physics-grounded probabilistic forecasting and causal power market econometric research platform.**
 
-[Problem & Gaps](#-1-the-problem-statement--the-research-gap) • [Solutions](#-2-the-solutions-we-engineered) • [Empirical Results](#-3-empirical-results--output-gallery) • [Execution Guide](#-4-execution-guide--reproduction) • [Repository Name & Pitch](#-5-suggested-repository-metadata)
+[Problem & Gaps](#1-the-problem-statement--the-research-gap) | [Solutions](#2-the-solutions-we-engineered) | [Empirical Results](#3-empirical-results--output-gallery) | [Execution Guide](#4-execution-guide--reproduction) | [Repository Metadata](#5-suggested-repository-metadata)
 
 </div>
 
 ---
 
-## 📸 Pipeline & Architecture Overview
+## Pipeline & Architecture Overview
 
 <div align="center">
   <img src="output/architecture_flow_card.png" alt="Architecture Flow" width="95%"/>
@@ -29,7 +29,7 @@
 
 ---
 
-## ⚡ Key Highlights at a Glance
+## Key Highlights at a Glance
 
 > [!IMPORTANT]
 > **5 Senior Quant Findings:**
@@ -41,7 +41,7 @@
 
 ---
 
-## 🎯 1. The Problem Statement & The Research Gap
+## 1. The Problem Statement & The Research Gap
 
 ### The Core Problem
 In deeply decarbonized European wholesale electricity markets (Germany `DE_LU`, France `FR`, Spain `ES`, Great Britain `GB`, Netherlands `NL`, etc.), variable renewable energy (VRE)—onshore wind, offshore wind, and solar PV—dominates the merit-order dispatch stack. Because wind and solar operate with near-zero marginal operational costs, their generation suppresses Day-Ahead and Intraday wholesale electricity clearing prices.
@@ -52,7 +52,7 @@ However, atmospheric boundary-layer turbulence and cloud dynamics introduce sign
 flowchart LR
     Atmosphere["Atmospheric NWP Inaccuracy<br/>(100m Wind Speed & SSRD Error)"] --> Generation["Physical Generation Surprise<br/>S_t = Actual - Forecast"]
     Generation --> OrderBook["Continuous Intraday Order Book<br/>(Demand Elasticity & Storage)"]
-    OrderBook --> Price["Wholesale Price Displacement<br/>ΔP_t = P_ID,t - P_DA,t"]
+    OrderBook --> Price["Wholesale Price Displacement<br/>Delta P_t = P_ID,t - P_DA,t"]
 ```
 
 ---
@@ -68,7 +68,7 @@ flowchart LR
 
 ---
 
-## 💡 2. The Solutions We Engineered
+## 2. The Solutions We Engineered
 
 ### A. Physics-Grounded Atmospheric & Capacity Modeling
 - **Aero-Dynamic Power Curve Aggregation**: Instead of simplistic linear cut-in/cut-out approximations, we implement multi-megawatt aerodynamic power curves (Vestas V112-3.45 MW onshore, Siemens Gamesa SG 8.0-167 DD offshore) smoothed across regional wind park clusters using 5-point Gauss-Hermite integration over local wind dispersion:
@@ -100,7 +100,7 @@ flowchart LR
 
 ---
 
-## 📊 3. Empirical Results & Output Gallery
+## 3. Empirical Results & Output Gallery
 
 All visual artifacts are automatically produced by the reporting pipeline and saved in `output/` and `reports/figures/`.
 
@@ -180,14 +180,14 @@ All visual artifacts are automatically produced by the reporting pipeline and sa
 
 ---
 
-## 💻 4. Execution Guide & Reproduction
+## 4. Execution Guide & Reproduction
 
 ### Prerequisites & Fast Install
 Requires **Python 3.11+** and **uv** (or standard pip):
 ```bash
 # 1. Clone repository
-git clone https://github.com/energy-quant/european-wind-solar-forecasting.git
-cd european-wind-solar-forecasting
+git clone https://github.com/DGskywalker/wind-solar-forecasting.git
+cd wind-solar-forecasting
 
 # 2. Create virtual environment and install in editable mode
 uv venv --python 3.11 .venv
@@ -250,18 +250,17 @@ curl -X POST http://localhost:8000/forecast \
 
 ---
 
-## 🏷️ 5. Suggested Repository Metadata
+## 5. Suggested Repository Metadata
 
 ### Recommended Repository Name
-`european-wind-solar-forecasting`  
-*(Alternative options: `aero-power-quant` | `vre-price-impact`)*
+`wind-solar-forecasting`
 
 ### Short Description (241 Characters — Under 350 Char Limit)
 > **Physics-grounded probabilistic wind & solar generation forecasting (NWP/ERA5) linked to wholesale power market price impact via causal econometrics (2SLS IV, Double ML) and friction-aware intraday arbitrage across European bidding zones.**
 
 ---
 
-## 📜 Academic Preprint & Citation
+## Academic Preprint & Citation
 
 The complete research paper is compiled at [`reports/research_report.md`](file:///Users/divyanshgupta/Desktop/WindSolarForecast/reports/research_report.md).
 
