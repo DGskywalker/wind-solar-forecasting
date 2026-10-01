@@ -1,4 +1,4 @@
-# European Wind & Solar Generation Forecasting: Linking Forecast Error to Day-Ahead & Intraday Price Impact
+# Wind & Solar Generation Forecasting: Linking Forecast Error to Day-Ahead & Intraday Price Impact
 
 <div align="center">
 
@@ -44,9 +44,9 @@
 ## 1. The Problem Statement & The Research Gap
 
 ### The Core Problem
-In deeply decarbonized European wholesale electricity markets (Germany `DE_LU`, France `FR`, Spain `ES`, Great Britain `GB`, Netherlands `NL`, etc.), variable renewable energy (VRE)—onshore wind, offshore wind, and solar PV—dominates the merit-order dispatch stack. Because wind and solar operate with near-zero marginal operational costs, their generation suppresses Day-Ahead and Intraday wholesale electricity clearing prices.
+In deeply decarbonized wholesale electricity markets (with empirical evaluations benchmarked across bidding zones such as `DE_LU`, `FR`, `ES`, `GB`, `NL`, etc.), variable renewable energy (VRE)—onshore wind, offshore wind, and solar PV—dominates the merit-order dispatch stack. Because wind and solar operate with near-zero marginal operational costs, their generation suppresses Day-Ahead and Intraday wholesale electricity clearing prices.
 
-However, atmospheric boundary-layer turbulence and cloud dynamics introduce significant physical forecast errors between **Day-Ahead gate closure (12:00 CET on D-1)** and **real-time physical delivery**. Market participants (Balance Responsible Parties — BRPs) must continuously rebalance positions across continuous Intraday auctions (XBID / EPEX Spot) or suffer penal balancing settlement charges.
+However, atmospheric boundary-layer turbulence and cloud dynamics introduce significant physical forecast errors between **Day-Ahead gate closure (12:00 CET on D-1)** and **real-time physical delivery**. Market participants (Balance Responsible Parties) must continuously rebalance positions across continuous Intraday auctions or suffer penal balancing settlement charges.
 
 ```mermaid
 flowchart LR
@@ -95,7 +95,7 @@ flowchart LR
 - **Non-Linear Merit-Order Spline**: Fits $P_t = f(R_t)$ via natural cubic smoothing splines and calculates analytical implied price impacts: $\Delta P_t \approx -f'(R_t) \cdot S_t$.
 
 ### E. Microstructure-Aware Intraday Arbitrage Engine
-- Implements continuous EPEX Spot intraday trading simulation with real-world exchange execution fees (0.50 EUR/MWh) and bid-ask half-spreads (1.20 EUR/MWh).
+- Implements continuous intraday trading simulation with real-world exchange execution fees (0.50 EUR/MWh) and bid-ask half-spreads (1.20 EUR/MWh).
 - Implements confidence-gated order dispatch, comparing naive directional strategies against selective signal routing.
 
 ---
@@ -203,7 +203,7 @@ make all
 
 ### Granular Execution Steps
 ```bash
-# Ingest raw weather and ENTSO-E market actuals
+# Ingest raw weather and market actuals
 python -m wind_solar_forecast.pipeline.ingest --zone DE_LU --start-date 2023-01-01 --end-date 2023-01-08
 
 # Train probabilistic model ladder and log runs to MLflow
@@ -256,7 +256,7 @@ curl -X POST http://localhost:8000/forecast \
 `wind-solar-forecasting`
 
 ### Short Description (241 Characters — Under 350 Char Limit)
-> **Physics-grounded probabilistic wind & solar generation forecasting (NWP/ERA5) linked to wholesale power market price impact via causal econometrics (2SLS IV, Double ML) and friction-aware intraday arbitrage across European bidding zones.**
+> **Physics-grounded probabilistic wind & solar generation forecasting (NWP/ERA5) linked to wholesale power market price impact via causal econometrics (2SLS IV, Double ML) and friction-aware intraday arbitrage across regional bidding zones.**
 
 ---
 
@@ -265,8 +265,8 @@ curl -X POST http://localhost:8000/forecast \
 The complete research paper is compiled at [`reports/research_report.md`](file:///Users/divyanshgupta/Desktop/WindSolarForecast/reports/research_report.md).
 
 ```bibtex
-@article{energy_quant_2026_wind_solar_impact,
-  title={Weather-Driven Wind & Solar Generation Forecasting for European Power Markets: Linking Forecast Error to Day-Ahead and Intraday Price Impact},
+@article{quant_power_2026_wind_solar_impact,
+  title={Weather-Driven Wind & Solar Generation Forecasting for Power Markets: Linking Forecast Error to Day-Ahead and Intraday Price Impact},
   author={Principal ML Research Engineer},
   journal={Energy Quantitative Research & Market Microstructure Working Papers},
   year={2026}
@@ -276,5 +276,5 @@ The complete research paper is compiled at [`reports/research_report.md`](file:/
 ---
 
 <div align="center">
-  <b>Built for quantitative energy trading desks, grid operators (ENTSO-E, TenneT), and energy economists.</b>
+  <b>Built for quantitative energy trading desks, transmission system operators, and energy economists.</b>
 </div>
