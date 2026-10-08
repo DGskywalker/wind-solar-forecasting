@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import logging
-from typing import Any, Dict, List
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -17,13 +17,13 @@ class NWPFeatureHypothesisAgent:
     def __init__(self, model_name: str = "gpt-4o-mini", temperature: float = 0.2) -> None:
         self.model_name = model_name
         self.temperature = temperature
-        self._hypotheses_cache: List[Dict[str, Any]] = []
+        self._hypotheses_cache: list[dict[str, Any]] = []
 
-    def inspect_nwp_metadata(self, metadata: Dict[str, Any]) -> List[Dict[str, Any]]:
+    def inspect_nwp_metadata(self, metadata: dict[str, Any]) -> list[dict[str, Any]]:
         """Analyzes atmospheric metadata fields (wind shear, boundary layer height,
         surface solar radiation downwards, air density) and suggests derived features.
         """
-        hypotheses: List[Dict[str, Any]] = [
+        hypotheses: list[dict[str, Any]] = [
             {
                 "hypothesis_id": "H1_WIND_SHEAR_POWER_LAW",
                 "target": "wind_generation",
@@ -50,7 +50,7 @@ class NWPFeatureHypothesisAgent:
         logger.info("Generated %d NWP feature hypotheses from metadata", len(hypotheses))
         return hypotheses
 
-    def get_structured_prompt(self, variables: List[str]) -> str:
+    def get_structured_prompt(self, variables: list[str]) -> str:
         """Constructs prompt template for LangChain LLM execution."""
         return (
             f"Given NWP atmospheric variables: {variables}, generate 3 physics-informed "
